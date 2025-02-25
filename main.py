@@ -1,14 +1,12 @@
 from collections import Counter
+from stats import count_words
 
 def main():
     with open('./books/frankenstein.txt') as o:
         c = Counter()
         content = o.read()
         c.update(content.lower())
-        wordcount = len(content.split())
-        # print(content)
-        # print(wordcount)
-        # print(c)
+        wordcount = count_words(content)
         print("--- Begin report of books/frankenstein.txt ---")
         print(f"{wordcount} words found in the document")
         print("")
